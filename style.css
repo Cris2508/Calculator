@@ -1,0 +1,71 @@
+.body {
+  background-image: linear-gradient(to bottom right, #7d290d, #d8ad8f);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  height: 97vh;
+  width: 97vw;
+  display: grid;
+  place-items: center;
+}
+
+.calculator {
+  position: relative;
+  height: auto;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #0e0e0e;
+  padding: 20px;
+}
+
+.theme-toggler {
+  position: absolute;
+  color: black;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.theme-toggler.active {
+  color: #333;
+}
+
+.theme-toggler.active::before {
+  background-color: rgb(32, 31, 38);
+}
+
+.theme-toggler::before {
+  position: absolute;
+  background-color: bisque;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  content: "";
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+
+#display {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 0 10px;
+  height: 150px;
+  width: auto;
+  max-width: 200px;
+  font-size: 10px;
+  overflow-x: scroll;
+}
+
+.buttons {
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  margin: 2px;
+  height: 10px;
+  width: 40px;
+  font-size: 20px;
+}/*# sourceMappingURL=style.css.map */

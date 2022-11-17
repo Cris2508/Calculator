@@ -1,0 +1,28 @@
+.theme-toggler {
+  position: absolute;
+  color: black;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.theme-toggler.active {
+  color: #333;
+}
+
+.theme-toggler.active::before {
+  background-color: rgb(32, 31, 38);
+}
+
+.theme-toggler::before {
+  position: absolute;
+  background-color: bisque;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  content: "";
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}

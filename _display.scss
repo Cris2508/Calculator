@@ -1,0 +1,11 @@
+#display {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 0 10px;
+  height: 150px;
+  width: auto;
+  max-width: 200px;
+  font-size: 10px;
+  overflow-x: scroll;
+}
