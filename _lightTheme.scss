@@ -1,0 +1,27 @@
+.calculator {
+  background-color: white;
+}
+
+.calculator #display {
+  color: pink;
+}
+
+.calculator button#clear {
+  background-color: rgb(127, 255, 155);
+  color: black;
+}
+
+.calculator button.btn-number {
+  background-color: aquamarine;
+  color: black;
+}
+
+.calculator button.btn-operator {
+  background-color: rgb(255, 127, 155);
+  color: black;
+}
+
+.calculator button.btn-equal {
+  background-color: rgb(127, 148, 255);
+  color: black;
+}
