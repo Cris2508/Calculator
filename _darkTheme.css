@@ -1,13 +1,13 @@
 .calculator.dark {
-  background-color: rgb(63, 63, 63);
+  background-color: #3f3f3f;
 }
 
 .calculator.dark #display {
-  color: rgb(61, 57, 58);
+  color: #3d393a;
 }
 
 .calculator.dark button#clear {
-  background-color: rgb(127, 255, 155);
+  background-color: #7fff9b;
   color: black;
 }
 
@@ -17,14 +17,15 @@
 }
 
 .calculator.dark button.btn-operator {
-  background-color: rgb(255, 127, 155);
+  background-color: #ff7f9b;
   color: black;
 }
 
 .calculator.dark button.btn-equal {
-  background-color: rgb(127, 148, 255);
+  background-color: #7f94ff;
   color: black;
 }
+
 .calculator.dark {
   background-color: white;
 }
@@ -34,7 +35,7 @@
 }
 
 .calculator.dark button#clear {
-  background-color: rgb(127, 255, 155);
+  background-color: #7fff9b;
   color: black;
 }
 
@@ -44,11 +45,11 @@
 }
 
 .calculator.dark button.btn-operator {
-  background-color: rgb(255, 127, 155);
+  background-color: #ff7f9b;
   color: black;
 }
 
 .calculator.dark button.btn-equal {
-  background-color: rgb(127, 148, 255);
+  background-color: #7f94ff;
   color: black;
 }

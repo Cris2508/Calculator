@@ -1,4 +1,4 @@
-#display {
+.display-screen {
   margin: 0 10px;
   height: 150px;
   width: auto;
@@ -11,7 +11,7 @@
   overflow-x: scroll;
 }
 
-#display::-webkit-scrollbar {
+.display-screen::-webkit-scrollbar {
   display: block;
   height: 3px;
 }
