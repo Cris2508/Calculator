@@ -2,11 +2,11 @@ const displayButtons = document.querySelector("#display__buttons"); //This will 
 const displayResult = document.querySelector("#display__result"); //This will show the result
 const btnOperators = document.querySelectorAll(".btn-operator");
 const btnNumbers = document.querySelectorAll(".btn-number");
-const btnClear = document.getElementById("#clear");
-const btnBackspace = document.getElementById("#backspace");
-const btnEqual = document.getElementById("#equal");
-const btnDecimal = document.getElementById("#decimal");
-const btnPercentage = document.getElementById("#percentage");
+const btnClear = document.getElementById("clear");
+const btnBackspace = document.getElementById("backspace");
+const btnEqual = document.getElementById("equal");
+const btnDecimal = document.getElementById("decimal");
+const btnPercentage = document.getElementById("percentage");
 
 // Display Number Function
 
@@ -27,48 +27,82 @@ for (let index = 0; index < btnNumbers.length; index++) {
 
 const showOperators = (event) => {
   let operatorDisplay = event.target.innerText;
-  if (displayOperators.innerText == "0") {
-    displayOperators.innerText = operatorDisplay;
-  } else {
-    displayOperators.innerText += operatorDisplay;
-  }
+  console.log(operatorDisplay);
+  operator = operatorDisplay;
+
+  displayButtons.innerText += operatorDisplay;
 };
 
 for (let index = 0; index < btnOperators.length; index++) {
-  btnOperators[i].addEventListener("click", showOperators);
+  btnOperators[index].addEventListener("click", showOperators);
 }
 
-let previousOperator = null;
+let operator = "";
+let number1 = "";
+let number2 = "";
 
-const calculate = (event) => {
-  let number1 = parseFloat(displayButtons.innerText);
-  let number2 = parseFloat(displayResult.innerText);
-  let currentOperator = event.target.innerText;
-
-  if (isNumeric(number1, number2)) {
-    displayButtons.innerText = "";
-    displayResult.innerText = getAnswer(number1, number2);
-    previousOperator = currentOperator;
+const getAnswer = () => {
+  console.log(displayButtons.innerText);
+  let result = "";
+  let display = displayButtons.innerText;
+  if (display[1] === "+") {
+    result = parseFloat(display[0]) + parseFloat(display[2]);
+  } else if (display[1] === "-") {
+    result = parseFloat(display[0]) - parseFloat(display[2]);
+  } else if (display[1] === "÷") {
+    result = parseFloat(display[0]) / parseFloat(display[2]);
+  } else if (display[1] === "×") {
+    result = parseFloat(display[0]) * parseFloat(display[2]);
   }
+  displayButtons.innerText = `${result}`;
+  console.log(result);
+  console.log(operator);
 };
 
-const getAnswer = (number1, number2) => {
-  switch (previousOperator) {
-    case "÷":
-      answer = number1 / number2;
-      break;
-    case "x":
-      answer = number1 * number2;
-      break;
-    case "-":
-      answer = number1 - number2;
-      break;
-    case "+":
-      answer = number1 + number2;
-      break;
-  }
-  return answer.displayResult;
+const showEcuation = () => {
+  displayButtons.innerText = `${number1} ${operator} ${number2}`;
 };
+
+// let previousOperator = "";
+
+// const isNumeric = (number) => {
+//   return !isNaN(parseFloat(number)) && isFinite(number);
+// };
+
+// const calculate = (event) => {
+//   let number1 = parseFloat(displayButtons.innerText);
+//   let number2 = parseFloat(displayResult.innerText);
+//   let currentOperator = event.target.innerText;
+
+//   console.log(number1, number2, previousOperator, currentOperator);
+
+//   if (isNumeric(number1) && isNumeric(number2)) {
+//     console.log("is a number");
+//     //displayButtons.innerText = "";
+//     displayResult.innerText = getAnswer(number1, number2);
+//     previousOperator = currentOperator;
+//   }
+// };
+
+// const getAnswer = (number1, number2) => {
+//   let answer = 0;
+//   switch (previousOperator) {
+//     case "÷":
+//       answer = number1 / number2;
+//       break;
+//     case "x":
+//       answer = number1 * number2;
+//       break;
+//     case "-":
+//       answer = number1 - number2;
+//       break;
+//     case "+":
+//       console.log("case met");
+//       answer = number1 + number2;
+//       break;
+//   }
+//   return answer;
+// };
 
 // Equal Button
 
@@ -76,20 +110,20 @@ const equalFunction = (event) => {
   let number1 = parseFloat(displayButtons.innerText);
   let number2 = parseFloat(displayResult.innerText);
 
-  if (isNumeric(number1, number2)) {
-    displayButtons.innerText = "";
-    displayResult.innerText = getAnswer(number1, number2);
-  }
+  //   if (isNumeric(number1, number2)) {
+  //     displayButtons.innerText = "";
+  //     displayResult.innerText = getAnswer(number1, number2);
+  //   }
 };
 
-btnEqual.addEventListener("click", equalFunction);
+btnEqual.addEventListener("click", getAnswer);
 
 // Clear Button
 
 const allClear = () => {
   number1 = "";
   number2 = "";
-  displayButtons.innerText = "0";
+  displayButtons.innerText = "";
   displayResult.innerText = "";
 };
 
